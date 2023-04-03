@@ -1,7 +1,7 @@
 package learningGraph
 import scala.collection.mutable.*
 object BoatPuzzle extends App{
-  // case class is a special type of class that is primarily used to hold immutable data.
+  // case class is a special type of class that is primarily used to hold immutable data
   case class State(leftMissionaries: Int, leftCannibals: Int, boatOnLeft: Boolean) {
     def isValid: Boolean =
       if (leftMissionaries < leftCannibals && leftMissionaries > 0) false
@@ -34,12 +34,12 @@ object BoatPuzzle extends App{
         nextState = State(newLeftMissionaries, newLeftCannibals, newBoatOnLeft)
         if nextState.isValid
       } yield nextState
-      //yield keyword is used to collect all these nextState objects into a new Seq[State] object,
+      //yield keyword is used to collect all these nextState objects into a new Seq[State] object
       // which represents all possible next states from the current state
     }
   }
   //Option[List[State]] type is used to represent the path from the starting state to the goal state
-  //optional value that can either be Some(value) or None. It's often used to handle cases where a value may or may not be present.
+  //optional value that can either be Some(value) or None. It's often used to handle cases where a value may or may not be present
   def bfs(start: State): Option[List[State]] = {
     val queue = Queue[(State, List[State])]()
     queue.enqueue((start, List(start)))
