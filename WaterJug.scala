@@ -20,7 +20,7 @@ object WaterJug extends App {
         return true
       }
       //Actions that we need to perform
-      //Fill Jug1, Fill Jug2, Empty Jug1, Empty Jug2, Pour Jug 1 to Jug 2", Pour Jug 2 to Jug 1", (
+      //Fill Jug1, Fill Jug2, Empty Jug1, Empty Jug2, Pour Jug 1 to Jug 2", Pour Jug 2 to Jug 1"
       val states = List((jug1Capacity, q), (p, jug2Capacity), (0, q), (p, 0),
         (p - math.min(p, jug2Capacity - q), q + math.min(p, jug2Capacity - q)),
         (p + math.min(q, jug1Capacity - p), q - math.min(q, jug1Capacity - p)))
